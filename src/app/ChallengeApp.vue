@@ -6,6 +6,7 @@ import { ClimberPose, LimbControls, limbNames } from '../features/limbs';
 import { StaminaGauge } from '../features/stamina';
 import { ActionPanel } from '../features/actions';
 import { AttemptList, AttemptReview } from '../features/records';
+import { RecognitionBoard } from '../features/recognition';
 import { useChallenge } from './useChallenge';
 
 const {
@@ -49,6 +50,7 @@ const caption = computed(() => active.value ? '历史记录 · 第 ' + (step.val
         </template>
       </aside>
     </div>
+    <RecognitionBoard v-if="active" :route="shownRoute" :attempt="active" :step="step" @jump="jump" />
     <AttemptList :attempts="attempts" :stored="stored" @open="open" />
   </main>
 </template>

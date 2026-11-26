@@ -121,12 +121,56 @@ h2 { font-weight: 700; font-size: 15px; }
 .attempt-list button:hover { background: #324e40; }
 .outcome { font-weight: 700; color: #ffb3a4; }
 .outcome.success { color: #bfdf9e; }
+.recognition { margin: 16px 0 0 206px; padding: 14px 17px; border: 1px solid var(--line); background: var(--panel); border-radius: 8px; min-width: 0; }
+.recognition h2 { display: flex; gap: 8px; align-items: center; margin: 0; }
+.recognition h2 svg { color: #b2cf99; }
+.recognition .section-heading > span { color: var(--muted); font-size: 13px; }
+.recog-legend { color: var(--muted); font-size: 12.5px; line-height: 1.65; margin-top: 8px; }
+.recog-legend b { color: #d8e6cd; font-weight: 600; }
+.recog-scroll { overflow-x: auto; margin-top: 12px; padding-bottom: 4px; }
+.recog-lanes { position: relative; }
+.recog-bar { position: absolute; height: 22px; border-radius: 4px; border: 1px solid; padding: 0 7px; font-size: 11.5px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-align: left; }
+.recog-bar.cross { background: #4b3d63; border-color: #9b84c7; color: #e6dbff; }
+.recog-bar.flag { background: #2f4f5c; border-color: #6fb3c9; color: #cdeefd; }
+.recog-bar.footswap { background: #54502e; border-color: #c7b45e; color: #f5e9b8; }
+.recog-bar:hover { filter: brightness(1.18); }
+.recog-bar.pinned { box-shadow: inset 0 0 0 2px #ffdc73; }
+.recog-cells { display: flex; gap: 4px; margin-top: 6px; }
+.recog-cell { width: 74px; flex: 0 0 auto; display: grid; gap: 2px; padding: 5px 6px; background: #22382f; border: 1px solid var(--line); border-radius: 5px; color: var(--muted); font-size: 11px; text-align: left; }
+.recog-cell b { color: #e6ece4; font-size: 12px; font-family: 'Barlow Condensed', sans-serif; letter-spacing: .4px; }
+.recog-cell.covered { background: #2c4438; }
+.recog-cell.current { border-color: var(--yellow); box-shadow: inset 0 -2px var(--yellow); }
+.recog-cell.clash { border-color: #e08a76; }
+.recog-cell:hover { background: #33493c; }
+.recog-blank { color: var(--muted); font-size: 12px; margin-top: 8px; }
+.recog-columns { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 14px; margin-top: 12px; }
+.recog-columns h3 { display: flex; align-items: center; gap: 7px; margin: 0 0 8px; font-size: 13px; color: #cfdec9; }
+.recog-columns h3 svg { color: #e8a793; }
+.recog-list, .recog-side { display: grid; gap: 8px; align-content: start; min-width: 0; }
+.recog-item { border: 1px solid var(--line); border-left: 3px solid #7d8f83; border-radius: 6px; background: #22362d; padding: 9px 11px; }
+.recog-item.cross { border-left-color: #9b84c7; }
+.recog-item.flag { border-left-color: #6fb3c9; }
+.recog-item.footswap { border-left-color: #c7b45e; }
+.recog-item.pinned { background: #2c3d2c; border-color: #8aa25f; }
+.recog-item.contested { border-left-color: #e08a76; background: #3a2d28; }
+.recog-item.idle { opacity: .72; }
+.recog-item-head { display: flex; justify-content: space-between; align-items: baseline; gap: 9px; }
+.recog-item-head b { font-size: 13.5px; }
+.recog-item-head span { color: var(--muted); font-size: 12px; text-align: right; }
+.recog-item ul { margin: 7px 0 0; padding: 0; list-style: none; display: grid; gap: 4px; }
+.recog-item li { display: flex; gap: 7px; align-items: baseline; color: #c3d2c0; font-size: 12px; }
+.recog-item li i { flex: 0 0 auto; font-style: normal; color: #9fb8a4; border: 1px solid #47604f; border-radius: 3px; padding: 0 4px; font-size: 11px; }
+.recog-item li em { margin-left: auto; font-style: normal; color: #bfe0a6; font-weight: 700; }
+.recog-item-actions { display: flex; gap: 7px; margin-top: 9px; }
+.recog-item-actions button { display: flex; align-items: center; gap: 5px; min-height: 30px; padding: 0 10px; background: #304a3d; border: 1px solid #617665; border-radius: 5px; font-size: 12px; }
+.recog-item-actions button:hover { background: #456150; }
 @media (max-width: 1120px) {
   .dashboard { grid-template-columns: minmax(0, 1fr) 260px; }
   .routes { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 7px; padding: 0; }
   .routes h2 { grid-column: 1 / -1; margin-bottom: 4px; }
   .route-button { margin: 0; }
-  .attempts { margin-left: 0; }
+  .attempts, .recognition { margin-left: 0; }
+  .recog-columns { grid-template-columns: 1fr; }
 }
 @media (max-width: 690px) {
   .masthead { height: 57px; }
